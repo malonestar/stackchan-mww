@@ -1,0 +1,49 @@
+stackchan-mww — attribution and licenses
+=========================================
+
+This add-on (the microWakeWord provider, the on-device wake-word picker, the
+model-selection storage, the CoreS3 audio-codec fix, and the modifications to the
+factory firmware files) is licensed under the GNU General Public License v3.0 or
+later — see the LICENSE file. GPLv3 is required because the provider is adapted
+from the ESPHome micro_wake_word component, whose C++ code is GPLv3.
+
+It integrates with and builds on the following projects. Each keeps its own
+license; comply with all of them. The Apache-2.0 and MIT components below are
+GPLv3-compatible.
+
+ESPHome — https://github.com/esphome/esphome
+  C++/runtime code: GPLv3. Python: MIT. Copyright (c) 2019 ESPHome.
+  micro_wake_word.cc/.h here was adapted from ESPHome's micro_wake_word
+  component (GPLv3).
+
+OHF-Voice / micro-wake-word — https://github.com/OHF-Voice/micro-wake-word
+  (formerly kahrendt/microWakeWord, by Kevin Ahrendt). License: Apache-2.0.
+  The wake-word model architecture and training framework used to produce the
+  three bundled .tflite models, and the streaming-inference recipe the provider
+  follows.
+
+Espressif esp-tflite-micro — https://github.com/espressif/esp-tflite-micro
+  License: Apache-2.0. TensorFlow Lite Micro port used for inference. Fetched by
+  the ESP-IDF component manager at build time; not redistributed here.
+
+esp-micro-speech-features — https://github.com/esphome/esp-micro-speech-features
+  License: Apache-2.0. The audio feature frontend used at runtime. Fetched by the
+  ESP-IDF component manager at build time; not redistributed here.
+
+M5Stack StackChan factory firmware — https://github.com/m5stack/StackChan
+  License: MIT. Copyright (c) 2026 M5Stack Technology CO LTD. The base firmware
+  this add-on modifies. It is NOT redistributed here; you obtain it yourself and
+  apply these files onto your clone. The modified factory files keep their
+  original MIT headers.
+
+xiaozhi-esp32 — https://github.com/78/xiaozhi-esp32 (v2.2.4)
+  License: MIT. Copyright (c) 2025 Shenzhen Xinzhi Future Technology Co., Ltd.
+  The application/audio framework the factory firmware builds on. This add-on
+  applies one small patch (patches/xiaozhi-esp32-mww.patch) to its
+  audio_service.cc.
+
+The bundled wake-word models (hey_stackchan_v1, hey_frank_v5, hey_m5_v3) were
+trained with the microWakeWord framework.
+
+Not affiliated with or endorsed by M5Stack, Espressif, the Open Home Foundation,
+or ESPHome. Provided as-is, without warranty.
