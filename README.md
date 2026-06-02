@@ -1,5 +1,10 @@
 # microWakeWord for the M5Stack StackChan
 
+> **Note on credit:** the wake-word engine isn't mine — `micro_wake_word.cc/.h` is
+> mostly recycled from ESPHome's `micro_wake_word` component (GPLv3). My part is
+> the multi-model picker and wiring it into the StackChan firmware. Full credit to
+> ESPHome and OHF-Voice/micro-wake-word; that's why it's GPL-3.0.
+
 This is the microWakeWord setup I got working on the M5Stack StackChan factory
 firmware. It lets the device listen for a wake phrase you train yourself instead
 of the fixed one baked into the stock firmware. It comes with three example
